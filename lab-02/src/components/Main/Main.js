@@ -17,12 +17,16 @@ export default function Main() {
         imgUrl="https://images.unsplash.com/photo-1512636618879-bbe79107e9e3?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=bd9460ee6d1ddbb6b1ca7be86dfc4590&auto=format&fit=crop&w=1825&q=80"
         description="Parent rhino with two babies"
       /> */}
-      <HornedBeast
-        title={data[0].title}
-        imgUrl={data[0].image_url}
-        description={data[0].description}
-      />
-      <HornedBeast
+      {data.map(function (beast) {
+        return (
+          <HornedBeast
+            title={beast.title}
+            imgUrl={beast.image_url}
+            description={beast.description}
+          />
+        );
+      })}
+      {/* <HornedBeast
         title={data[1].title}
         imgUrl={data[1].image_url}
         description={data[1].description}
@@ -116,7 +120,7 @@ export default function Main() {
         title={data[19].title}
         imgUrl={data[19].image_url}
         description={data[19].description}
-      />
+      /> */}
     </main>
   );
 }
